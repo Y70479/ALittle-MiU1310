@@ -1,17 +1,10 @@
 /*
 Andre Little
-<<<<<<< HEAD
 Class: MiU
 Term: 1310
 Completed Date: 10/03/2013
 Project 1: Mega Weight Lost Project - Feature, Search, Browse
-=======
-Class: Visual Frame Works
-Term: 1309
-Instructor: Mr. Gibson
-Completed Date: 9/26/2013
-Project 4: Mega Weight Lost Project - JS Source
->>>>>>> master
+
 */
 
 // The beginning of the Dom.
