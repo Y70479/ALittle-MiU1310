@@ -23,13 +23,17 @@ Project 1: Mega Weight Lost Project - Feature, Search, Browse
 	<body>
 		<header>
 			<!-- This is where my custom made logo will go for the app. -->
-			<h1 class="logo1">Mega Weight Lost Project</h1>
+			<h1><a href="additem.html"><img src="images/CTA.png" class="cta"></a></h1>
 		</header>
-		<article>
-			<h2>Description</h2>
-			<p class="dText">The Project is a personal trainer in your pocket. We determine your work out schedule based on your end goal, and the amount of calories you take in a day. Want help? Need motivation? Join Today!
-			</p>
-		</article>
-		<a href="additem.html">Add a Meal</a>
+		<div>
+			<label for="search"></label><input type="text" id="search" placeholder="Search for Meals...." /><input type="submit" value="Search Meal">
+		</div>
+		<nav id="browseSection">
+			<h2 id="browseTitle">Browse by..</h2>
+				<p class="bLinks"><a href="date.html">Date</a></p>
+				<p class="bLinks"><a href="meal.html">Meal Time</a></p>
+				<p class="bLinks"><a href="name.html">Name</a></p>		
+		</nav>
+		
 	</body>
 </html>
