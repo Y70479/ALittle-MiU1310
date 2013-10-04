@@ -13,14 +13,13 @@ html {
 }
 
 
-
 /* Background style of the Page */
 body {
 	background: #1a292f;
 }
 
 /* Styling for the "Title/Logo" */
-h1 {
+#logo2 {
 	color: steelblue;
 	text-align: center;
 	text-shadow: 0px 3px 2px black;
@@ -32,6 +31,15 @@ h1 {
 	border-left: transparent;
 	border-right: transparent;
 	border-bottom-color: steelblue;	
+}
+
+.cta {
+	display: block;
+	max-width: 283px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 /* Styling of the legend and fieldset */
@@ -90,6 +98,15 @@ input[type="button"] {
 	font-size: inherit;
 }
 
+input[type="submit"] {
+	margin-left: 5px;
+	width: 100px;
+	height: 30px;
+	border: none;
+	background-color: steelblue;
+	color: white;
+}
+
 /* Input field Styles */
 input[type=text] {
 	width: auto;
@@ -116,12 +133,39 @@ textarea {
 	float: left;
 }
 
+#search {
+	margin: auto;
+	padding: 2px;
+	width: auto;
+}
+
 /* Launch Page style */
-article {
+.bLinks {
 	line-height: 20px;
 	color: #151515;
 	background:	 -webkit-linear-gradient(#c3efff 0%, #e3e3e3 100%);
-	border-radius: 32px;
 	border-color: steelblue;
+	padding: 10px; 
+}
+
+#browseTitle {
+	line-height: 20px;
+	color: white;
+	background: gray;
+	border-color: gray;
 	padding: 10px;
+}
+
+.lHeaders {
+	line-height: 30px;
+	color: white;
+	background: gray;
+	border-color: gray;
+	padding: 10px;	
+	text-align: center;
+}
+
+h2 {
+	color: white;
+	text-align: center;
 }
