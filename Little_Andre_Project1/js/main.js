@@ -91,8 +91,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	function gotData() {
 		if (localStorage.length === 0){
 			alert("There is no User Data saved at this time, so default data has been added.");
+			hideForm("on");
 			defaultData();
-		} else {
+		};
 			hideForm("on");
 			var newDiv = createEl("Div");
 			newDiv.setAttribute("id", "storedItems");
@@ -122,7 +123,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				}
 				editDeleteLinks(localStorage.key(i), linksLi); // This is new.
 			}
-		}
 	};
 	
 	//Add Meal Time Images
@@ -192,7 +192,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			if (radio[i].value == "No" && item.additional == "No"){
 				radio[i].setAttribute("checked", "checked");
 			}
-		}		
+		};		
 	
 		// Remove Initial listener from the submit button..
 		saveData.removeEventListener("click", dataSaved);
