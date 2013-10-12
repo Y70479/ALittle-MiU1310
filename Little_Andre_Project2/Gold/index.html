@@ -18,26 +18,678 @@ Project 1: Mega Weight Lost Project - Feature, Search, Browse
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<meta name="HandheldFriendly" content="true" />
 		<meta name="MobileOptimized" content="320" />
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+	    <meta http-equiv="cleartype" content="on">
 		<title>Mega Weight Lost Project</title>
+		<!-- Style Sheets -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
-		<header>
-			<!-- This is where my custom made logo will go for the app. -->
-			<h1><a href="additem.html"><img src="images/CTA.png" class="cta"></a></h1>
-		</header>
-		<div>
-			<label for="search"></label><input type="text" id="search" placeholder="Search for Meals...." /><input type="submit" value="Search Meal">
-		</div>
-		<nav id="browseSection">
-			<h2 id="browseTitle">Browse by..</h2>
-				<p class="bLinks"><a href="date.html">Date</a></p>
-				<p class="bLinks"><a href="meal.html">Meal Time</a></p>
-				<p class="bLinks"><a href="name.html">Name</a></p>
-				<p class="bLinks"><a href="fat.html">Grams of Total Fat</a></p>
-				<p class="bLinks"><a href="carbs.html">Grams of Carbohydrates</a></p>
-				<p class="bLinks"><a href="pro.html">Grams of Protein</a></p>		
-		</nav>
+	<!--Start of the Home Page-->
+		<div data-role="page" id="home">
 		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed" class="topBottom">
+				<h1>Home</h1>
+			</div>
+			
+			<!--Call to Action/Feature-->
+			<div id="cta">
+				<a href="additem.html" data-ajax="false"><img src="images/CTA.png" /></a>
+			</div>
+			
+			<!--Browsing Links-->
+			<div data-role="content">
+				<h2 data-role="button" id="browseTitle">Browse By..</h2>
+				<a href="#dates" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/calendar.png" align="left"/> Date</a>
+				<a href="#mealTimes" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/clock.png" align="left"/> Meal Time</a>
+				<a href="#names" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/pencil.png" align="left"/> Name</a>
+				<a href="#totalFat" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/fatIcon.png" align="left"/>Grams of Total Fat</a>
+				<a href="#carbs" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/carbIcon.png" align="left"/>Grams of Carbohydrates</a>
+				<a href="#protein" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/proIcon.png" align="left"/>Grams of Protein</a>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="home" class="ui-btn-active">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+
+		<!--Start of Search by Date Page-->
+		<div data-role="page" id="dates" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Date</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="YYYY-MM-DD" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Eggs 				   <br/>
+						    Grams of Fat: 			3g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg 
+				    	</p>  
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-09-01 		   <br/>
+						    Name: Chips 			   <br/>
+						    Grams of Fat: 			2g <br/>
+						    Grams of Carbohydrates: 2g <br/>
+						    Grams of Protein:		2g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: .99 cent bag of Hot Cheetoes
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 2013-11-28 		   	   <br/>
+						    Name: Dressing 				   <br/>
+						    Grams of Fat: 			9g     <br/>
+						    Grams of Carbohydrates: 2g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+		
+		<!--Start of Search by Meal Time Page-->
+		<div data-role="page" id="mealTimes" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Meal Time</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Meal Time" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+					    <p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Eggs 				   <br/>
+						    Grams of Fat: 			3g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg 
+					    </p>
+				    </li>
+				    <li>
+					    <p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1996-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes 
+					    </p>
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+					   <p> 
+					       Meal Time: Lunch		   <br/>
+						   Date: 2013-09-01 		   <br/>
+						   Name: Chips 			   <br/>
+						   Grams of Fat: 			2g <br/>
+						   Grams of Carbohydrates: 2g <br/>
+						   Grams of Protein:		2g <br/>
+						   Serving Size: 			1  <br/>
+						   Notes: .99 cent bag of Hot Cheetoes
+					   </p>   
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+						<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 2013-11-28 		   	   <br/>
+						    Name: Dressing 				   <br/>
+						    Grams of Fat: 			9g     <br/>
+						    Grams of Carbohydrates: 2g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing 
+						</p> 
+				    </li>
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+		
+		<!--Start of Search by Name Page-->
+		<div data-role="page" id="names" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Name</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Name of Item" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Eggs 				   <br/>
+						    Grams of Fat: 			3g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg
+				    	</p>
+				    </li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1985-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes  
+						</p> 
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-11-21 		   <br/>
+						    Name: Dressing 			   <br/>
+						    Grams of Fat: 			2g <br/>
+						    Grams of Carbohydrates: 2g <br/>
+						    Grams of Protein:		2g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Made the same as it was in 93'
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 1993-11-28 		   	   <br/>
+						    Name: Dressing 				   <br/>
+						    Grams of Fat: 			9g     <br/>
+						    Grams of Carbohydrates: 2g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing  
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--Start of Search by Total Page-->
+		<div data-role="page" id="totalFat" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Total Fat</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="How Many Grams of Fat?" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Bacon 			   <br/>
+						    Grams of Fat: 			7g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg
+				    	</p>
+				    </li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1986-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes  
+						</p> 
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-11-21 		   <br/>
+						    Name: Dressing 			   <br/>
+						    Grams of Fat: 			2g <br/>
+						    Grams of Carbohydrates: 2g <br/>
+						    Grams of Protein:		2g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Made the same as it was in 93'
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 1993-11-28 		   	   <br/>
+						    Name: Yams	 				   <br/>
+						    Grams of Fat: 			7g     <br/>
+						    Grams of Carbohydrates: 2g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing  
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+		
+		<!--Start of Search by Carbs Page-->
+		<div data-role="page" id="carbs" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Carbohydrates</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="How Many Grams Carbohydrates?" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Bacon 			   <br/>
+						    Grams of Fat: 			7g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg
+				    	</p>
+				    </li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1986-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes  
+						</p> 
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-11-21 		   <br/>
+						    Name: Dressing 			   <br/>
+						    Grams of Fat: 			2g <br/>
+						    Grams of Carbohydrates: 32g <br/>
+						    Grams of Protein:		2g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Made the same as it was in 93'
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 1993-11-28 		   	   <br/>
+						    Name: Yams	 				   <br/>
+						    Grams of Fat: 			7g     <br/>
+						    Grams of Carbohydrates: 32g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing  
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+		
+		<!--Start of Search by Protein Page-->
+		<div data-role="page" id="protein" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Protein</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="How Many Grams of Protein?" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Bacon 			   <br/>
+						    Grams of Fat: 			7g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg
+				    	</p>
+				    </li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1986-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes  
+						</p> 
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-11-21 		   <br/>
+						    Name: Fried Chicken		   <br/>
+						    Grams of Fat: 			11g <br/>
+						    Grams of Carbohydrates: 2g <br/>
+						    Grams of Protein:		22g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Made the same as it was in 93'
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 1993-11-28 		   	   <br/>
+						    Name: Yams	 				   <br/>
+						    Grams of Fat: 			7g     <br/>
+						    Grams of Carbohydrates: 32g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing  
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+					
+		<!--About Us Section-->
+		<div data-role="page" id="aboutUs" data-add-back-btn="true">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>About Us</h1>
+			</div>
+			
+			<!--Content for the About us area-->
+			<div data-role="content" data-role="controlgroup">
+			    <a href="#home" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" data-icon="home" data-iconpos="right"><img src="images/home.png" align="left"/>Home</a>
+			    <a href="https://github.com/Y70479" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right"><img src="images/github-6-512.png" width="30" height="30" align="left"/>GitHub</a>
+			    <a href="#" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right"><img src="images/iphone.png" align="left"/>Gold App</a>
+			    <a href="#" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right"><img src="images/iphone2.png" align="left"/>Bronze App</a>
+			    <a href="#developer" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right"><img src="images/embed.png" align="left"/>Developer</a>
+			    <a href="#credit" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right"><img src="images/text-left.png" align="left"/>Credit</a>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="aboutUs" class="ui-btn-active">About Us</a></li>
+
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+				<!--Start of Search by Protein Page-->
+		<div data-role="page" id="protein" data-add-back-btn="true">
+		
+			<!--Header for the Top of the Page-->
+			<div data-role="header" data-position="fixed">
+				<h1>Protein</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="How Many Grams of Protein?" data-inset="true">
+				    <li data-role="list-divider">BreakFast</li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 2013-10-01 		   <br/>
+						    Name: Bacon 			   <br/>
+						    Grams of Fat: 			7g <br/>
+						    Grams of Carbohydrates: 3g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			3  <br/>
+						    Notes: Hard boiled Egg
+				    	</p>
+				    </li>
+				    <li>
+				    	<p>
+					    	Meal Time: BreakFast	   <br/>
+						    Date: 1986-10-01 		   <br/>
+						    Name: Cereal 			   <br/>
+						    Grams of Fat: 			1g <br/>
+						    Grams of Carbohydrates: 6g <br/>
+						    Grams of Protein:		6g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Frosted Flakes  
+						</p> 
+				    </li>
+				    <li data-role="list-divider">Lunch</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Lunch		   <br/>
+						    Date: 2013-11-21 		   <br/>
+						    Name: Fried Chicken		   <br/>
+						    Grams of Fat: 			11g <br/>
+						    Grams of Carbohydrates: 2g <br/>
+						    Grams of Protein:		22g <br/>
+						    Serving Size: 			1  <br/>
+						    Notes: Made the same as it was in 93'
+				    	</p>
+				    </li>
+				    <li data-role="list-divider">Dinner</li>
+				    <li>
+				    	<p>
+					    	Meal Time: Dinner			   <br/>
+						    Date: 1993-11-28 		   	   <br/>
+						    Name: Yams	 				   <br/>
+						    Grams of Fat: 			7g     <br/>
+						    Grams of Carbohydrates: 32g     <br/>
+						    Grams of Protein:		6g     <br/>
+						    Serving Size: 			1      <br/>
+						    Notes: Thanksgiving Dressing  
+				    	</p>
+				    </li>
+
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#aboutUs" data-icon="aboutUs">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+					
+		<!--Developer Section-->
+		<div data-role="page" id="developer" data-add-back-btn="true">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>Developer</h1>
+			</div>
+			
+			<!--Content for the About us area-->
+			<div data-role="content">
+				<p>
+					Hello Everyone,<br/><br/>
+					My name is Andre "Dre" Little and I attend Full Sail Online for Mobile Development. This is my App "Mega Weight Lost Program" I am making in MiU.
+					<br/><br/>
+					Thanks for Looking at it.
+				</p>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="aboutUs" class="ui-btn-active">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--Credit Section-->
+		<div data-role="page" id="credit" data-add-back-btn="true">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>Credits</h1>
+			</div>
+			
+			<!--Content for the About us area-->
+			<div data-role="content">
+				<ul>
+					<li>
+						<p>Github Icon</p>
+						<a href="https://github.com">Here</a>
+					</li>
+					<li>
+						<p>Icons for Buttons</p>
+						<a href="http://www.iconbeast.com/free/">Here</a>
+					</li>
+				</ul>
+			</div>
+			
+			<!--Footer Navigation Tabs-->
+			<div data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="aboutUs" class="ui-btn-active">About Us</a></li>
+						<li><a href="#tips" data-icon="bars">Tips</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		
+		
+		
+								
+
+	<!--JavaScript under here-->
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
 	</body>
 </html>
